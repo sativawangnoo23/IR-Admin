@@ -16,7 +16,22 @@ app.use(express.static("public"));
 
 // Homepage
 app.get('/', function (req, res) {
-  res.send("<h1>Hello</h1>")
+  res.render('home')
+})
+
+// Contacts
+app.get('/contacts', function (req, res) {
+  res.render('home')
+})
+
+// Posts
+app.get('/posts', function (req, res) {
+  res.render('home')
+})
+
+// Subscriptions
+app.get('/subscriptions', function (req, res) {
+  res.render('home')
 })
 
 // Listening Port
