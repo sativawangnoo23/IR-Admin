@@ -79,7 +79,6 @@ app.get('/contacts', function(req, res) {
 // Posts
 app.get('/posts', function(req, res) {
   Post.find({visibility:false},null,{sort:{date:-1}}, function(err, posts) {
-    console.log(posts);
     res.render("posts",{ posts:posts});}
   )})
 
@@ -107,5 +106,6 @@ app.get('/subscriptions', function(req, res) {
 
 // Listening Port
 app.listen(port, function() {
-  console.log("Listening on port")
+  console.log("Listening on port 2021")
+  console.log("Open http://localhost:2021 ");
 })

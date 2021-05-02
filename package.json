@@ -4,7 +4,8 @@
   "description": "Admin Portal for IR Cell Website.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "author": "Sativa Wangnoo, Shivam Bhat",
   "license": "ISC",
@@ -14,5 +15,10 @@
     "express": "^4.17.1",
     "moment": "^2.29.1",
     "mongoose": "^5.12.7"
+  },
+  "bin":"index.js",
+  "pkg": {
+    "assets": ["views/*.ejs"]
   }
+
 }
