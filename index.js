@@ -78,8 +78,19 @@ app.get('/contacts', function(req, res) {
 
 // Posts
 app.get('/posts', function(req, res) {
-  res.render('home')
+  Post.find({visibility:false},null,{sort:{date:-1}}, function(err, posts) {
+    console.log(posts);
+    res.render("posts",{ posts:posts});}
+  )})
+
+app.post('/posts', function(req, res) {
+  Post.findOne({visibility:true},'id',{sort:{id:-1}}, function(err, lastID) {
+    Post.findByIdAndUpdate(req.body.publishId,{id:lastID.id+1,visibility:true}, function(err, publishedPost) {
+      res.redirect('/posts')
+    })
+  })
 })
+
 
 // Subscriptions
 app.get('/subscriptions', function(req, res) {

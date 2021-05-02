@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Posts Made</title>
+  <style media="screen">
+    table,
+    td {
+      border: 1px solid #333;
+    }
+
+    thead,
+    tfoot {
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="/">Home</a><br><br>
+  <table>
+    <thead>
+      <tr>
+        <th>PUBLISH</th>
+        <th>TITLE</th>
+        <th>AUTHOR</th>
+        <th>EMAIL</th>
+        <th>DATE</th>
+        <th>MESSAGE</th>
+        <th>TEXT</th>
+      </tr>
+    </thead>
+    <form action="/posts" method="post">
+      <tbody>
+        <% for (var i=0; i<posts.length;i++){ %>
+        <tr>
+          <td> <button type="submit" name="publishId" value='<%=posts[i]._id%>'>Publish</button> </td>
+          <td><%=posts[i].title%></td>
+          <td><%=posts[i].author%></td>
+          <td><%=posts[i].email%></td>
+          <td><%=posts[i].date%></td>
+          <td><%=posts[i].other%></td>
+          <td><%=posts[i].text%></td>
+        </tr>
+        <% } %>
+      </tbody>
+    </form>
+  </table>
+</body>
+
+</html>
