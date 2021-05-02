@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Contacts Made</title>
+  <style media="screen">
+    table,
+    td {
+      border: 1px solid #333;
+    }
+
+    thead,
+    tfoot {
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>NAME</th>
+        <th>EMAIL</th>
+        <th>DATE</th>
+        <th>ORGANIZATION</th>
+        <th>DESIGNATION</th>
+        <th>SUBJECT</th>
+        <th>MESSAGE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (var i=0; i<contacts.length;i++){ %>
+      <tr>
+        <td><%=contacts[i].name%></td>
+        <td><%=contacts[i].email%></td>
+        <td><%=contacts[i].date%></td>
+        <td><%=contacts[i].organization%></td>
+        <td><%=contacts[i].designation%></td>
+        <td><%=contacts[i].subject%></td>
+        <td><%=contacts[i].message%></td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+</body>
+
+</html>

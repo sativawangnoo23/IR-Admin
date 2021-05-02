@@ -71,7 +71,9 @@ app.get('/', function(req, res) {
 
 // Contacts
 app.get('/contacts', function(req, res) {
-  res.render('home')
+  Contact.find({},null,{sort:{date:-1}}, function(err, contacts) {
+    res.render("contacts",{ contacts:contacts});
+  });
 })
 
 // Posts
